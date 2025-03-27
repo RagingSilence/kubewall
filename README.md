@@ -175,63 +175,60 @@ You can run **kubewall** on any port you like. by using `-p` or `--port` flag
 kubewall -p 7080
 ```
 
-# :man_technologist: Developers
+# 启动步骤
+
+## 前端开发模式
+
+1. 进入前端目录并安装依赖：
+   ```bash
+   cd client
+   npm install
+   ```
+
+2. 启动开发服务器：
+   ```bash
+   npm run dev
+   ```
+
+3. 在浏览器中访问 `http://localhost:5173`。
+
+## 后端开发模式
+
+1. 进入后端目录并构建后端：
+   ```bash
+   cd backend
+   go build -o kubewall main.go
+   ```
+
+2. 启动后端：
+   ```bash
+   ./kubewall
+   ```
+
+3. 在浏览器中访问 `http://localhost:7080`。
+
+## 集成模式
+
+1. 构建前端：
+   ```bash
+   cd client
+   npm run build
+   ```
+
+2. 将前端静态文件移动到后端：
+   ```bash
+   mv client/dist backend/routes/static
+   ```
+
+3. 启动后端：
+   ```bash
+   cd backend
+   ./kubewall
+   ```
+
+4. 在浏览器中访问 `http://localhost:7080`。
 
 
-<p float="left">
-   <picture width="49%">
-      <source media="(prefers-color-scheme: dark)" srcset="./media/Abhimanyu-Dark.png" width="49%">
-      <source media="(prefers-color-scheme: light)" srcset="./media/Abhimanyu-Light.png" width="49%">
-      <img src="./media/Abhimanyu-Light.png" width="49%">
-   </picture>
-   <picture width="49%">
-      <source media="(prefers-color-scheme: dark)" srcset="./media/Kshitij-Dark.png" width="49%">
-      <source media="(prefers-color-scheme: light)" srcset="./media/Kshitij-Light.png" width="49%">
-      <img src="./media/Abhimanyu-Light.png" width="49%">
-   </picture>
-   <a target="_blank" href="https://github.com/abhimanyu003">
-      <picture width="49%">
-         <source media="(prefers-color-scheme: dark)" srcset="./media/Github-Dark.png" width="49%">
-         <source media="(prefers-color-scheme: light)" srcset="./media/Github-Light.png" width="49%">
-         <img src="./media/Github-Light.png" width="49%">
-      </picture>
-   </a>
-   <a target="_blank" href="https://github.com/kshitijmehta">
-      <picture width="49%">
-         <source media="(prefers-color-scheme: dark)" srcset="./media/Github-Dark.png" width="49%">
-         <source media="(prefers-color-scheme: light)" srcset="./media/Github-Light.png" width="49%">
-         <img src="./media/Github-Light.png" width="49%">
-      </picture>
-   </a>
-   <a target="_blank" href="https://x.com/abhimanyu003">
-      <picture width="49%">
-         <source media="(prefers-color-scheme: dark)" srcset="./media/Twitter-Dark.png" width="49%">
-         <source media="(prefers-color-scheme: light)" srcset="./media/Twitter-Light.png" width="49%">
-         <img src="./media/Twitter-Light.png" width="49%">
-      </picture>
-   </a>
-   <a target="_blank" href="https://x.com/kshitijjazz">
-      <picture width="49%">
-         <source media="(prefers-color-scheme: dark)" srcset="./media/Twitter-Dark.png" width="49%">
-         <source media="(prefers-color-scheme: light)" srcset="./media/Twitter-Light.png" width="49%">
-         <img src="./media/Twitter-Light.png" width="49%">
-      </picture>
-   </a>
-   <a target="_blank" href="https://www.linkedin.com/in/abhimanyu003/">
-      <picture width="49%">
-         <source media="(prefers-color-scheme: dark)" srcset="./media/LinkedIn-Dark.png" width="49%">
-         <source media="(prefers-color-scheme: light)" srcset="./media/LinkedIn-Light.png" width="49%">
-         <img src="./media/LinkedIn-Light.png" width="49%">
-      </picture>
-   </a>
-   <a target="_blank" href="https://www.linkedin.com/in/kshitijkmehta/">
-      <picture width="49%">
-         <source media="(prefers-color-scheme: dark)" srcset="./media/LinkedIn-Dark.png" width="49%">
-         <source media="(prefers-color-scheme: light)" srcset="./media/LinkedIn-Light.png" width="49%">
-         <img src="./media/LinkedIn-Light.png" width="49%">
-      </picture>
-   </a>
-</p>
 
 # Contribution
 
