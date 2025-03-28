@@ -175,6 +175,32 @@ You can run **kubewall** on any port you like. by using `-p` or `--port` flag
 kubewall -p 7080
 ```
 
+## 前端主要文件概述
+
+### 主要文件和功能
+1. **`/client/index.html`**
+   - 前端的入口 HTML 文件。
+   - 定义了一个 `div` 容器（`id="root"`），用于挂载 React 应用。
+   - 加载了主脚本文件 `/src/main.tsx`。
+
+2. **`/client/src/main.tsx`**
+   - React 应用的主入口文件。
+   - 配置了全局的 Redux 状态管理和路由。
+   - 使用 `ThemeProvider` 提供主题支持，并通过 `Toaster` 提供全局通知功能。
+   - 渲染了 `RouterProvider`，用于管理应用的路由。
+
+3. **`/client/src/KubeWall.tsx`**
+   - 应用的核心组件，负责整体布局和导航。
+   - 包含侧边栏（`Sidebar`）和主内容区域（`App` 或 `Outlet`）。
+   - 通过 Redux 管理集群数据，并动态加载集群相关信息。
+   - 提供了顶部导航和集群切换功能。
+
+### 文件关系
+- **`index.html`** 是整个前端的入口文件，加载了 `main.tsx`。
+- **`main.tsx`** 初始化了应用的全局配置，包括 Redux、路由和主题，并渲染了 `KubeWall` 组件。
+- **`KubeWall.tsx`** 是应用的核心组件，负责整体布局和导航逻辑，集成了侧边栏和主内容区域。
+- 这些文件共同构成了前端的基础架构，确保应用能够正常加载和运行。
+
 # 启动步骤
 
 ## 前端开发模式

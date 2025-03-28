@@ -115,12 +115,12 @@ const AddConfig = () => {
           <DialogTrigger asChild>
             <Button>
               <PlusCircledIcon className="mr-2 h-4 w-4" />
-              Add Config
+              添加域
             </Button>
           </DialogTrigger>
           <DialogContent>
             <DialogHeader>
-              <DialogTitle>Add Config</DialogTitle>
+              <DialogTitle>添加域</DialogTitle>
               <DialogDescription>
               </DialogDescription>
             </DialogHeader>
@@ -128,13 +128,13 @@ const AddConfig = () => {
               <div className="grid flex-1 gap-2">
                 <Tabs defaultValue={activeTab} onValueChange={(value: string) => setActiveTab(value)}>
                   <TabsList className="grid w-full grid-cols-3">
-                    <TabsTrigger value="bearerToken">Bearer Token</TabsTrigger>
-                    <TabsTrigger value="certificate">Certificate</TabsTrigger>
-                    <TabsTrigger value="kubeconfigFile">kubeconfig file</TabsTrigger>
+                    <TabsTrigger value="bearerToken">Bearer Token（令牌）</TabsTrigger>
+                    <TabsTrigger value="certificate">Certificate（证书）</TabsTrigger>
+                    <TabsTrigger value="kubeconfigFile">kubeconfig 文件</TabsTrigger>
                   </TabsList>
                   <TabsContent value="bearerToken">
                     <div className="space-y-1">
-                      <Label htmlFor="bearerTokenName">Name</Label>
+                      <Label htmlFor="bearerTokenName">名称</Label>
                       <Input
                         id="bearerTokenName"
                         placeholder="Config name"
@@ -144,11 +144,11 @@ const AddConfig = () => {
                       />
                       {
                         bearerTokenConfig.name && checkForValidConfigName(bearerTokenConfig.name) &&
-                        <p className="text-red-500 text-sm">Name must be alphanumeric and can include hyphens (-).</p>
+                        <p className="text-red-500 text-sm">名称必须是字母数字，可以包含连字符 (-)。</p>
                       }
                     </div>
                     <div className="space-y-1">
-                      <Label htmlFor="bearerTokenApiServer">API Server</Label>
+                      <Label htmlFor="bearerTokenApiServer">API 服务器</Label>
                       <Input
                         id="bearerTokenApiServer"
                         className="shadow-none"
@@ -171,7 +171,7 @@ const AddConfig = () => {
                   </TabsContent>
                   <TabsContent value="certificate">
                     <div className="space-y-1">
-                      <Label htmlFor="certificateName">Name</Label>
+                      <Label htmlFor="certificateName">名称</Label>
                       <Input
                         id="certificateName"
                         placeholder="Config name"
@@ -181,11 +181,11 @@ const AddConfig = () => {
                       />
                       {
                         bearerTokenConfig.name && checkForValidConfigName(certificateConfig.name) &&
-                        <p className="text-red-500 text-sm">Name must be alphanumeric and can include hyphens (-).</p>
+                        <p className="text-red-500 text-sm">名称必须是字母数字，可以包含连字符 (-)。</p>
                       }
                     </div>
                     <div className="space-y-1">
-                      <Label htmlFor="certificateApiServer">API Server</Label>
+                      <Label htmlFor="certificateApiServer">API 服务器</Label>
                       <Input
                         id="certificateApiServer"
                         className="shadow-none"
@@ -195,7 +195,7 @@ const AddConfig = () => {
                       />
                     </div>
                     <div className="space-y-1">
-                      <Label htmlFor="certificateCertificate">Certificate</Label>
+                      <Label htmlFor="certificateCertificate">证书</Label>
                       <Textarea
                         id="certificateCertificate"
                         placeholder={`----- BEGIN CERTIFICATE -----\r\n----- END CERTIFICATE -----`}
@@ -205,7 +205,7 @@ const AddConfig = () => {
                       />
                     </div>
                     <div className="space-y-1">
-                      <Label htmlFor="certificateCertificateKey">Certificate Key</Label>
+                      <Label htmlFor="certificateCertificateKey">证书密钥</Label>
                       <Textarea id="certificateCertificateKey"
                         placeholder={`----- BEGIN RSA PRIVATE KEY -----\r\n----- END CERTIFICATE -----`}
                         className="shadow-none"
@@ -216,7 +216,7 @@ const AddConfig = () => {
                   </TabsContent>
                   <TabsContent value="kubeconfigFile">
                     <div className="space-y-1">
-                      <Label htmlFor="kubeconfigFile">File</Label>
+                      <Label htmlFor="kubeconfigFile">文件</Label>
                       <Input
                         id="kubeconfigFile"
                         type='file'
@@ -228,7 +228,7 @@ const AddConfig = () => {
                       <Textarea id="kubeconfig"
                         rows={11}
                         className="shadow-none"
-                        placeholder="Select the config file or directly paste your config here"
+                        placeholder="选择配置文件或直接粘贴您的配置"
                         value={textValue}
                         onChange={(e) => {
                           setTextValue(e.target.value || '');
@@ -245,7 +245,7 @@ const AddConfig = () => {
                 type="submit"
                 onClick={addNewConfig}
                 disabled={isDisabled()}
-              >Save</Button>
+              >保存</Button>
             </DialogFooter>
           </DialogContent>
         </Dialog>

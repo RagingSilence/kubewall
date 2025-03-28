@@ -82,7 +82,7 @@ export function KubeWall() {
                       className={cn(buttonVariants({ variant: 'ghost', size: 'icon' }), 'h-10 w-10', 'border', 'shadow-none', 'mt-1', 'ml-0.5')}
                     >
                       <PlusCircledIcon className="w-5 h-5" />
-                      <span className="sr-only">Add Cluster</span>
+                      <span className="sr-only">添加域</span>
                     </Link>
                   </TooltipTrigger>
                   <TooltipContent side="right" className="flex items-center gap-4">
