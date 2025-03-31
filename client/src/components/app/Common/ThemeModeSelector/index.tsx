@@ -23,13 +23,13 @@ export function ThemeModeSelector() {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuItem onClick={() => {setTheme("light"); location.reload();}}>
-          Light
+          明亮
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => {setTheme("dark"); location.reload();}}>
-          Dark
+          暗黑
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => {setTheme("system"); location.reload();}}>
-          System
+          跟踪状态
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

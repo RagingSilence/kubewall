@@ -66,7 +66,7 @@ export function KubeConfiguration() {
 
   useEffect(() => {
     if (error) {
-      toast.error("Failure", {
+      toast.error("Faliure", {
         description: error.message,
       });
       dispatch(fetchClusters());
@@ -105,14 +105,14 @@ export function KubeConfiguration() {
                     </Button>
                   </TooltipTrigger>
                   <TooltipContent className="mr-2.5">
-                    Refresh Clusters
+                    刷新集群
                   </TooltipContent>
                 </Tooltip>
               </TooltipProvider>
             </div>
           </div>
           <Input
-            placeholder="Filter configs..."
+            placeholder="筛选配置..."
             value={search}
             onChange={(event) =>
               onSearch(event.target.value)
@@ -124,9 +124,9 @@ export function KubeConfiguration() {
             <Table className="border overflow-auto">
               <TableHeader className="bg-muted/80">
                 <TableRow>
-                  <TableHead>Name</TableHead>
-                  <TableHead>Namespace</TableHead>
-                  <TableHead>Status</TableHead>
+                  <TableHead>名称</TableHead>
+                  <TableHead>命名空间</TableHead>
+                  <TableHead>状态</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -162,11 +162,11 @@ export function KubeConfiguration() {
                                     <span className="font-normal">{name}</span>
                                   </TableCell>
                                   <TableCell className="">
-                                    <span>{namespace || 'N/A'}</span>
+                                    <span>{namespace || '无'}</span>
                                   </TableCell>
                                   <TableCell className="">
                                     {
-                                      connected ? <StatusCell cellValue='Active' /> : <StatusCell cellValue='InActive' />
+                                      connected ? <StatusCell cellValue='活跃' /> : <StatusCell cellValue='非活跃' />
                                     }
 
                                   </TableCell>
@@ -183,7 +183,7 @@ export function KubeConfiguration() {
                         colSpan={3}
                         className="text-center"
                       >
-                        No results.
+                        无结果。
                       </TableCell>
                     </TableRow>
                 }

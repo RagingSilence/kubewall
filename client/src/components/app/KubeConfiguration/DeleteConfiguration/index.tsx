@@ -44,9 +44,9 @@ const DeleteConfiguration = ({configId}: DeleteConfigurationProps) => {
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Delete Config</DialogTitle>
+          <DialogTitle>删除域</DialogTitle>
           <DialogDescription>
-            Are you sure you want to delete this config ?
+            确定要删除此配置吗？删除后，您将无法恢复它。
           </DialogDescription>
         </DialogHeader>
 
@@ -55,12 +55,12 @@ const DeleteConfiguration = ({configId}: DeleteConfigurationProps) => {
            className="w-2/4"
             type="submit"
             onClick={()=>setModalOpen(false)}
-          >No</Button>
+          >否</Button>
           <Button
             onClick={() => deleteCurrentConfig()}
             className="w-2/4"
             type="submit"   
-          >Yes</Button>
+          >是</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>

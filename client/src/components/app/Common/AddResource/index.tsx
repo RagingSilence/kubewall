@@ -41,7 +41,7 @@ const AddResource = () => {
 
   const editorContainerRef = useRef<HTMLDivElement>(null);
   const [editorDimensions, setEditorDimensions] = useState({ width: "100%", height: "100%" });
-  const [isDialogOpen, setIsDialogOpen] = useState(false); // Track dialog open state
+  const [isDialogOpen, setIsDialogOpen] = useState(false); // 跟踪弹窗的打开状态
 
   const yamlUpdate = () => {
     dispatch(updateYaml({
@@ -57,13 +57,13 @@ const AddResource = () => {
   };
   useEffect(() => {
     if (yamlUpdateResponse.message) {
-      toast.success("Success", {
+      toast.success("Successs", {
         description: yamlUpdateResponse.message,
       });
       setIsDialogOpen(false);
       dispatch(resetUpdateYaml());
     } else if (error) {
-      toast.error("Failure", {
+      toast.error("Faliure", {
         description: error.message,
       });
       setIsDialogOpen(false);
@@ -80,7 +80,7 @@ const AddResource = () => {
     };
 
     if (isDialogOpen) {
-      // Resize editor when dialog is opened
+      // 当弹窗打开时调整编辑器大小
       resizeEditor();
       window.addEventListener("resize", resizeEditor);
     }
@@ -112,7 +112,7 @@ const AddResource = () => {
             </DialogTrigger>
           </TooltipTrigger>
           <TooltipContent side="bottom">
-            Add Resource
+            添加资源
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>
@@ -120,9 +120,9 @@ const AddResource = () => {
 
       <DialogContent onInteractOutside={(event) => event.preventDefault()} className="w-full max-w-screen-lg flex flex-col" style={{ height: '80vh' }}>
         <DialogHeader>
-          <DialogTitle>YAML/Manifest</DialogTitle>
+          <DialogTitle>YAML/清单文件</DialogTitle>
           <DialogDescription>
-            Add the yaml/manifest file of the new resource you want to create and click Apply.
+            添加您想要创建的新资源的 YAML/清单文件，然后点击“应用”。
           </DialogDescription>
         </DialogHeader>
         <div ref={editorContainerRef} className="flex-grow border-b rounded-b-sm" style={{ overflow: "hidden" }}>
@@ -140,7 +140,7 @@ const AddResource = () => {
                       <Loader className='w-5 h-5 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600' /> :
                       <SaveIcon className="h-4 w-4 mr-1" />
                   }
-                  <span className='text-xs'>Apply</span>
+                  <span className='text-xs'>应用</span>
                 </Button>
               }
               <Editor

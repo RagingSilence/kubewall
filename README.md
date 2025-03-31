@@ -164,6 +164,7 @@ docker run -p 7080:7080 \
     -v $(pwd):/.certs \
     ghcr.io/kubewall/kubewall:latest \
     --certFile=/.certs/kubewall.test+3.pem \
+
     --keyFile=/.certs/kubewall.test+3-key.pem
 ```
 
@@ -201,6 +202,43 @@ kubewall -p 7080
 - **`KubeWall.tsx`** 是应用的核心组件，负责整体布局和导航逻辑，集成了侧边栏和主内容区域。
 - 这些文件共同构成了前端的基础架构，确保应用能够正常加载和运行。
 
+index.html
+   └── main.tsx
+         ├── routes/index.tsx (路由配置)
+         ├── KubeWall.tsx (主框架组件)
+         │      ├── Sidebar (左侧导航栏)
+         │      └── App (主内容区域)
+         │            ├── KubeConfiguration (子页面组件)
+         │            ├── KwList (子页面组件)
+         │            └── KwDetails (子页面组件)
+         ├── redux/store.ts (全局状态管理)
+         └── components/ui/ (基础 UI 组件)
+
+Table/
+├── data-table.tsx                # 表格主组件
+├── index.css                     # 表格样式
+├── index.ts                      # 导出模块
+├── TableCells/                   # 单元格渲染逻辑
+│   ├── conditionCell.tsx         # 条件单元格
+│   ├── currentByDesiredCell.tsx  # 当前值/目标值单元格
+│   ├── defaultCell.tsx           # 默认单元格
+│   ├── index.tsx                 # 单元格导出
+│   ├── multiValueCell.tsx        # 多值单元格
+│   ├── nameCell.tsx              # 名称单元格
+│   ├── selectCell.tsx            # 选择单元格
+│   ├── statusCell.tsx            # 状态单元格
+│   └── timeCell.tsx              # 时间单元格
+├── TableDelete/                  # 删除功能
+│   └── index.tsx                 # 删除组件
+├── TableFacetedFilter/           # 多维筛选功能
+│   └── index.tsx                 # 筛选组件
+├── TableHeaders/                 # 列头组件
+│   └── default-header.tsx        # 默认列头
+├── TableToolbar/                 # 工具栏组件
+│   └── index.tsx                 # 工具栏组件
+└── TableViewOptions/             # 视图选项组件
+    └── index.tsx                 # 视图选项组件
+
 # 启动步骤
 
 ## 前端开发模式
@@ -231,7 +269,7 @@ kubewall -p 7080
    ./kubewall
    ```
 
-3. 在浏览器中访问 `http://localhost:7080`。
+3. 在浏览器中访问 `http://localhost:7080`
 
 ## 集成模式
 
