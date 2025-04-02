@@ -57,7 +57,7 @@ const PodLogs = ({ namespace, name, configName, clusterName }: PodLogsProps) => 
       <div className="flex items-start justify-between py-4 flex-row items-center h-10 border-b bg-muted/50">
         <div className="mx-2 flex basis-9/12">
           <DebouncedInput
-            placeholder="Search... (/)"
+            placeholder="搜索... (/)"
             value={podLogSearch}
             onChange={(value) => { setPodLogSearch(String(value)), podLogSearchRef.current = String(value); }}
             className="h-8 font-medium text-xs shadow-none"

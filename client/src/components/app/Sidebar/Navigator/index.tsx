@@ -54,7 +54,7 @@ const SidebarNavigator = memo(function () {
         onClick={() => setOpen((open) => !open)}
       />
       <CommandDialog open={open} onOpenChange={setOpen}>
-        <CommandInput placeholder="Search..." />
+        <CommandInput placeholder="搜索..." />
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
           {

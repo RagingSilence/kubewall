@@ -38,7 +38,7 @@ export function DataTableToolbar<TData>({
     <div className="flex items-center justify-between px-2 py-2">
       <div className="flex flex-1 items-center space-x-2">
         <DebouncedInput
-          placeholder="Search... (/)"
+          placeholder="搜索... "
           value={globalFilter ?? ''}
           onChange={(value) => {
             setGlobalFilter(String(value));
@@ -49,7 +49,7 @@ export function DataTableToolbar<TData>({
         {showNamespaceFilter && !loading && namespaces && namespaces.length > 0 && (
           <DataTableFacetedFilter
             column={table.getColumn("Namespace")}
-            title="Namespace"
+            title="命名空间"
             options={namespacesFilter(namespaces)}
           />
         )}
